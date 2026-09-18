@@ -21,6 +21,8 @@ jobs:
       app_path: frontend
       deploy_path: /home/manoohpq/peci-ci.com
       health_check_url: https://peci-ci.com
+      protect_paths: |
+        backend
       build_env: |
         NEXT_PUBLIC_API_URL=https://backend.peci-ci.com/api
         NEXT_PUBLIC_SITE_URL=https://peci-ci.com

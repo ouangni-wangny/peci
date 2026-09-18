@@ -1,0 +1,14 @@
+name: Monitor
+
+on:
+  schedule:
+    - cron: '*/15 * * * *'
+  workflow_dispatch:
+
+jobs:
+  check:
+    uses: ouangni-wangny/xsel-deploy-mutualise/.github/workflows/monitor.yml@main
+    with:
+      urls: |
+        https://backend.peci-ci.com/up
+        https://peci-ci.com
