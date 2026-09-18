@@ -54,7 +54,7 @@ class RegisterMemberRequest extends FormRequest
     public function messages(): array
     {
         return [
-            'accepted_terms.accepted' => "Vous devez accepter les statuts et le règlement intérieur de PECI.",
+            'accepted_terms.accepted' => 'Vous devez accepter les statuts et le règlement intérieur de PECI.',
             'email.unique' => 'Cette adresse email est déjà utilisée.',
             'telephone.regex' => 'Le numéro de téléphone est invalide.',
             'telephone.unique' => 'Ce numéro de téléphone est déjà associé à un membre PECI.',

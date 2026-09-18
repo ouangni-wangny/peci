@@ -30,6 +30,8 @@ jobs:
           cache-dependency-path: frontend/package-lock.json
 
       - run: npm ci
-      - run: npx tsc --noEmit
       - run: npm run lint
+      # `next build` type-checke déjà tout le projet (y compris les types de
+      # routes générés comme LayoutProps, absents avant ce build) — un
+      # `tsc --noEmit` séparé avant le build échouerait sur ces types.
       - run: npm run build

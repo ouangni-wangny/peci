@@ -50,7 +50,7 @@ class SettingsSeeder extends Seeder
                 'key' => 'public_about_objectifs',
                 'value' => implode("\n", [
                     "Promouvoir l'éducation en Côte d'Ivoire et au-delà des frontières subsahariennes.",
-                    "Redorer le blason du système éducatif ivoirien.",
+                    'Redorer le blason du système éducatif ivoirien.',
                     "Redonner l'espoir d'un avenir meilleur à une jeunesse en devenir.",
                 ]),
                 'type' => 'string',
@@ -59,9 +59,9 @@ class SettingsSeeder extends Seeder
                 'key' => 'public_about_missions',
                 'value' => implode("\n", [
                     "Kits scolaires, prises en charge, bourses d'études, parrainages et réhabilitation de certains établissements.",
-                    "Aider à la réinsertion des enfants déscolarisés et des enfants marginalisés.",
-                    "Créer des activités novatrices pour stimuler et mettre à profit la créativité des apprenants.",
-                    "Organiser des évènements caritatifs pour pallier aux besoins des nécessiteux.",
+                    'Aider à la réinsertion des enfants déscolarisés et des enfants marginalisés.',
+                    'Créer des activités novatrices pour stimuler et mettre à profit la créativité des apprenants.',
+                    'Organiser des évènements caritatifs pour pallier aux besoins des nécessiteux.',
                 ]),
                 'type' => 'string',
             ],

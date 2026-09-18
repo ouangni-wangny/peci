@@ -5,6 +5,7 @@ namespace Tests\Feature;
 use App\Models\Member;
 use App\Models\MembershipType;
 use App\Models\User;
+use App\Services\MemberCardService;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
@@ -92,7 +93,7 @@ class AdminMemberManagementTest extends TestCase
             'status' => Member::STATUS_APPROVED,
             'accepted_terms' => true,
         ]);
-        app(\App\Services\MemberCardService::class)->issueCard($member);
+        app(MemberCardService::class)->issueCard($member);
 
         $response = $this->actingAs($admin, 'sanctum')->get("/api/admin/members/{$member->id}/card/image");
 

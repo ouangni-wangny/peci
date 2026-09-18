@@ -11,9 +11,7 @@ class MembershipReceivedNotification extends Notification
 {
     use Queueable;
 
-    public function __construct(private readonly Member $member)
-    {
-    }
+    public function __construct(private readonly Member $member) {}
 
     public function via(object $notifiable): array
     {

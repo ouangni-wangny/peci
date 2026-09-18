@@ -7,7 +7,6 @@ use App\Http\Requests\UpdateSettingsRequest;
 use App\Http\Requests\UploadSettingImageRequest;
 use App\Models\ActivityLog;
 use App\Models\Setting;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
 class SettingController extends Controller

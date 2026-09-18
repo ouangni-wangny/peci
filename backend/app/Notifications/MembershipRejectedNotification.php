@@ -11,9 +11,7 @@ class MembershipRejectedNotification extends Notification
 {
     use Queueable;
 
-    public function __construct(private readonly Member $member, private readonly ?string $reason = null)
-    {
-    }
+    public function __construct(private readonly Member $member, private readonly ?string $reason = null) {}
 
     public function via(object $notifiable): array
     {
@@ -25,7 +23,7 @@ class MembershipRejectedNotification extends Notification
         $message = (new MailMessage)
             ->subject("PECI — Votre demande d'adhésion")
             ->greeting("Bonjour {$this->member->prenoms},")
-            ->line("Après étude de votre dossier, nous ne sommes pas en mesure de valider votre adhésion à PECI pour le moment.");
+            ->line('Après étude de votre dossier, nous ne sommes pas en mesure de valider votre adhésion à PECI pour le moment.');
 
         if ($this->reason) {
             $message->line("Motif : {$this->reason}");

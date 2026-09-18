@@ -21,7 +21,7 @@ class DemoProjectSeeder extends Seeder
                 'title' => '[DEMO] Kits scolaires pour la rentrée',
                 'region' => 'abidjan',
                 'location' => 'Abidjan, Cocody',
-                'objective' => "[DEMO] Distribuer des kits scolaires complets aux enfants issus de familles vulnérables avant la rentrée.",
+                'objective' => '[DEMO] Distribuer des kits scolaires complets aux enfants issus de familles vulnérables avant la rentrée.',
                 'budget' => 5000000,
                 'beneficiaries' => 500,
                 'progress' => 65,

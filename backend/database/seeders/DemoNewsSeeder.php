@@ -44,7 +44,7 @@ class DemoNewsSeeder extends Seeder
             [
                 'title' => "[DEMO] Journée de sensibilisation sur l'éducation des filles",
                 'category' => 'jeunesse',
-                'excerpt' => "[DEMO] Retour sur une journée dédiée à la sensibilisation des familles.",
+                'excerpt' => '[DEMO] Retour sur une journée dédiée à la sensibilisation des familles.',
             ],
         ];
 
