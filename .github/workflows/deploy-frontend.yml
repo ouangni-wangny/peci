@@ -21,7 +21,6 @@ jobs:
       app_path: frontend
       deploy_path: /home/manoohpq/peci-ci.com
       health_check_url: https://peci-ci.com
-      keep_releases: 5
     secrets:
       SSH_HOST: ${{ secrets.DEPLOY_SSH_HOST }}
       SSH_PORT: ${{ secrets.DEPLOY_SSH_PORT }}

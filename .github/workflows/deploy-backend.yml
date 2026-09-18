@@ -23,7 +23,6 @@ jobs:
       # (Domains → peci-ci.com/backend), pas dans un dossier séparé.
       deploy_path: /home/manoohpq/peci-ci.com/backend
       health_check_url: https://backend.peci-ci.com/up
-      keep_releases: 5
       # Serveur CloudLinux : /usr/bin/php ne correspond pas à la version
       # sélectionnée pour le compte (8.4) — voir xsel-deploy-mutualise README.
       php_bin: /opt/alt/php84/usr/bin/php
