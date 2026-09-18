@@ -8,6 +8,7 @@ use App\Services\Sms\AfricasTalkingGateway;
 use App\Services\Sms\LogSmsGateway;
 use App\Services\Sms\SmsGateway;
 use Illuminate\Support\Facades\Gate;
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -34,6 +35,11 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+        // Certains serveurs MySQL/MariaDB mutualisés limitent encore la clé
+        // d'index à 767-1000 octets ; en utf8mb4 (4 octets/caractère), un
+        // varchar(255) indexé (email, tokens...) dépasse cette limite.
+        Schema::defaultStringLength(191);
+
         Gate::define('admin-only', fn (User $user) => $user->isAdmin());
 
         Gate::define('staff-or-admin', fn (User $user) => $user->isAdminOrStaff());
