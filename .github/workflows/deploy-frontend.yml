@@ -18,12 +18,16 @@ jobs:
 
   deploy:
     needs: ci
-    uses: ouangni-wangny/xsel-deploy-mutualise/.github/workflows/deploy.yml@v1.2.0
+    uses: ouangni-wangny/xsel-deploy-mutualise/.github/workflows/deploy.yml@v1.3.0
     with:
       stack: nextjs-passenger
       app_path: frontend
       deploy_path: /home/manoohpq/peci-ci.com
       health_check_url: https://peci-ci.com
+      # Comportement inchangé depuis le kit v1.2 (Node 20, en fin de vie depuis
+      # avril 2026) : retirer cette ligne pour adopter la détection (.nvmrc,
+      # engines.node, sinon 22) après avoir testé le build sous Node 22.
+      node_version: '20'
       protect_paths: |
         backend
       build_env: |
