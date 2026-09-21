@@ -1,0 +1,30 @@
+version: 1
+
+apps:
+  # Ordre = ordre de déploiement (l'API avant le frontend qui l'appelle).
+  backend:
+    # cPanel crée le sous-domaine backend.peci-ci.com DANS ce dossier
+    # (Domains → peci-ci.com/backend), pas dans un dossier séparé.
+    deploy_path: /home/manoohpq/peci-ci.com/backend
+    health_check_url: https://backend.peci-ci.com/up
+    lint: true                                  # CI : Pint
+    # Comportement de PECI volontairement inchangé (en production, validé) :
+    # serveur CloudLinux où /usr/bin/php ≠ version sélectionnée (8.4).
+    php_bin: /opt/alt/php84/usr/bin/php
+    composer_bin: /opt/alt/php84/usr/bin/composer
+    composer_on_server: true
+    manage_web_php: false
+    # Pour adopter le build CI (vendor livré) et l'alignement du PHP web :
+    # retirer php_bin, composer_bin, composer_on_server et manage_web_php.
+
+  frontend:
+    deploy_path: /home/manoohpq/peci-ci.com
+    health_check_url: https://peci-ci.com
+    lint: true                                  # CI : npm run lint
+    protect_paths: [backend]                    # le backend vit dans ce dossier : rsync --delete l'effacerait
+    # Node 20 est en fin de vie (avril 2026) : retirer cette ligne pour adopter
+    # la détection (.nvmrc, engines.node, sinon 22) après avoir testé le build.
+    node_version: "20"
+    build_env:
+      NEXT_PUBLIC_API_URL: https://backend.peci-ci.com/api
+      NEXT_PUBLIC_SITE_URL: https://peci-ci.com
